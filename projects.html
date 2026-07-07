@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Darius Amin-Tehrani's Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top-bar">
+
+        <div class="logo">
+            <img src="portfolio-pictures/lion.png" width="40" height="40" alt="Lion logo">
+            <span>Darius Amin-Tehrani</span>
+        </div>
+
+        <nav class="page-links">
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="experience.html">Experience</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <label class="theme-switch" for="theme-checkbox">
+            <input type="checkbox" id="theme-checkbox" checked>
+            <div class="slider round">
+                 <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </div>
+        </label>
+
+        <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <div id="side-menu" class="side-menu">
+        <p>Jump To:</p>
+        <a href="#badminton-db" onclick="toggleMenu()">Badminton Database</a>
+        <a href="#airfare-analytics" onclick="toggleMenu()">Airline Fare Analytics</a>
+        <a href="#erp-sim" onclick="toggleMenu()">ERP Sim</a>
+        <a href="#house-building-estimator" onclick="toggleMenu()">House-Building Estimator</a>
+        <a href="#staffing-optimizer" onclick="toggleMenu()">Staffing Optimizer</a>
+        <a href="#monte-carlo-simulation" onclick="toggleMenu()">Monte Carlo Simulation</a>
+        <a href="#college-affordability" onclick="toggleMenu()">College Affordability</a>
+    </div>
+
+
+   <main>
+
+      <section class="title">
+          <h1>The databases, dashboards, and simulations I've built.</h1>
+      </section>
+
+      <div class="card-grid">
+
+  <section id="badminton-db" class="card">
+    <h2>Badminton Statistics Database</h2>
+    <div class="card-text">
+      <ul>
+        <li>Designed an 18-table database in SQL Server Management Studio, paired with a Python ETL pipeline that ingests 7,000 rows of raw Kaggle data and structures it into something cleanly queryable.</li>
+        <li>Wrote advanced SQL — window functions, CTEs, and multi-table JOINs — to analyze players, brands, and equipment and answer questions the raw tables couldn't on their own.</li>
+        <li>Built interactive Tableau stories with LOD calculations and parameter filters, surfacing performance insights across 27,000+ records that a viewer can slice and explore themselves.</li>
+      </ul>
+      <div class="skills">
+          <span>SQL</span>
+          <span>Python</span>
+          <span>Tableau</span>
+          <span>ETL</span>
+      </div>
+    </div>
+    <img src="portfolio-pictures/badmintonDB-PlayerMatches-SS.png" class="project-img" alt="Badminton Tableau dashboard">
+    <div class="card-buttons">
+      <a href="https://github.com/Cruiser-21/BadmintonDB" target="_blank" rel="noopener" class="button">SSMS GitHub Code</a>
+      <a href="https://public.tableau.com/app/profile/darius.amin.tehrani/viz/tableauBadmintonDB/AnalyzingBadmintonSinglesPlayersandCountries?publish=yes" target="_blank" rel="noopener" class="button">View Dashboard →</a>
+    </div>
+  </section>
+
+  <section id="airfare-analytics" class="card">
+  <h2>Airline Route Fare &amp; Demand Analytics</h2>
+  <div class="card-text">
+    <ul>
+      <li>Built a consulting-style demo for American Airlines: cleaned a 640-route dataset by removing 2 corrupted rows, researching 6 missing distance values, and eliminating 4 duplicate routes down to a validated 634-route dataset.</li>
+      <li>Compared multiple predictive approaches for passenger volume — 4 linear regression specifications, a cost-complexity-pruned regression tree, and 5 random forest configurations — evaluating each on RMSE, mean error, and R² to identify the best-performing model.</li>
+      <li>Formulated a binary integer program in R (lpSolve) to select the 23 highest revenue-per-route cities to prioritize for network expansion, maximizing projected route efficiency under a city-count constraint.</li>
+    </ul>
+    <div class="skills">
+        <span>R</span>
+        <span>Predictive Modeling</span>
+        <span>Random Forest</span>
+        <span>Regression Trees</span>
+        <span>Data Cleaning</span>
+        <span>Optimization</span>
+    </div>
+  </div>
+  <img src="portfolio-pictures/R-diagram.png" class="project-img" alt="Inventory reorder point dashboard">
+  <div class="card-buttons">
+    <a href="portfolioDownloadables/airline-fare-passenger-analytics.R" target="_blank" rel="noopener" class="button">Download R Script</a>
+    <a href="portfolioDownloadables/Airfares.csv" target="_blank" rel="noopener" class="button">Download Dataset</a>
+  </div>
+</section>
+
+  <section id="erp-sim" class="card">
+    <h2>ERP Sim with Tableau Visualizations</h2>
+    <div class="card-text">
+      <ul>
+        <li>Served as the Inventory Analyst for my team, responsible for keeping products in stock without tying up cash in excess inventory across the ERPsim business simulation.</li>
+        <li>Used Tableau for the first time to visualize how stock levels moved each round — tracking the classic sawtooth pattern of depletion and replenishment to set smarter reorder points.</li>
+        <li>Built dashboards that flagged stockout risk early and timed orders against shifting market demand, directly informing the team's purchasing decisions.</li>
+      </ul>
+      <div class="skills">
+          <span>Tableau</span>
+          <span>Inventory Management</span>
+          <span>Reorder Point Analysis</span>
+          <span>Data Visualization</span>
+          <span>SAP / ERP</span>
+      </div>
+    </div>
+    <img src="portfolio-pictures/inventoryReorderPoint.png" class="project-img" alt="Inventory reorder point dashboard">
+    <div class="card-buttons">
+      <a href="portfolioDownloadables/InventorySawtoothDiagram.twbx" target="_blank" rel="noopener" class="button">Download Sawtooth Diagram</a>
+    </div>
+  </section>
+
+  <section id="house-building-estimator" class="card">
+    <h2>House-Building Cost Estimator</h2>
+    <div class="card-text">
+      <ul>
+        <li>Built a spreadsheet decision-support tool that prices a residential build across three phases — foundation, framing, and roofing — and scores its energy efficiency.</li>
+        <li>Users configure foundation type, framing, roof design, roofing material, and windows; the model returns a phased cost breakdown with discount logic and projects a groundbreaking-to-completion timeline.</li>
+        <li>Runs on a cell-linked front end with VLOOKUP option tables and IFNA error handling for clean, validated user input.</li>
+      </ul>
+      <div class="skills">
+          <span>Excel</span>
+          <span>VLOOKUP</span>
+          <span>Data Validation</span>
+          <span>Cost Modeling</span>
+      </div>
+    </div>
+    <img src="portfolio-pictures/houseParameters.png" class="project-img" alt="Front-end of the house-building cost estimator showing phased cost summary and energy score">
+    <div class="card-buttons">
+      <a href="portfolioDownloadables/house-building-cost-estimator.xlsm" target="_blank" rel="noopener" class="button">Download Workbook</a>
+    </div>
+  </section>
+
+  <section id="staffing-optimizer" class="card">
+    <h2>TA &amp; Student Staffing Optimizer</h2>
+    <div class="card-text">
+      <ul>
+        <li>Built a Solver optimization that assigns TAs and students to weekly lab slots across three courses from preference and availability data.</li>
+        <li>Staffs six daily time slots, Monday through Thursday, for K304, K327, and K353 using TA-preference and student-availability matrices.</li>
+        <li>Formulated as a constraint-optimization problem with multiple Solver models that balance coverage against stated preferences, reporting slots staffed and headcount per shift through a cell-linked summary.</li>
+      </ul>
+      <div class="skills">
+          <span>Excel</span>
+          <span>Solver</span>
+          <span>Constraint Optimization</span>
+          <span>Scheduling</span>
+      </div>
+    </div>
+    <img src="portfolio-pictures/TA-Schedule.png" class="project-img" alt="Solver-based staffing model with TA preference and student availability matrices">
+    <div class="card-buttons">
+      <a href="portfolioDownloadables/scheduleOptimizer.xlsx" target="_blank" rel="noopener" class="button">Download Workbook</a>
+    </div>
+  </section>
+
+  <section id="monte-carlo-simulation" class="card">
+    <h2>Monte Carlo Inventory-Risk Simulation</h2>
+    <div class="card-text">
+      <ul>
+        <li>Built an @RISK model that sizes a single-season inventory order under uncertain demand and quantifies the resulting profit distribution.</li>
+        <li>Models demand as a PERT distribution (minimum 50, most likely 150, maximum 325) for a newsvendor-style ordering decision.</li>
+        <li>Sweeps candidate order quantities with RiskSimtable and charges a penalty cost for reserved units that go unsold, outputting mean profit, 1st and 99th percentiles, probability of a loss, and probability of clearing a target profit.</li>
+      </ul>
+      <div class="skills">
+          <span>Excel</span>
+          <span>@RISK</span>
+          <span>Monte Carlo Simulation</span>
+          <span>PERT Distribution</span>
+          <span>Risk Analysis</span>
+      </div>
+    </div>
+    <!-- TODO: no preview image was in the original article for this card — drop in the filename once you have one -->
+    <div class="card-buttons">
+      <a href="portfolioDownloadables/riskSimulation.xlsm" target="_blank" rel="noopener" class="button">Download Workbook</a>
+    </div>
+  </section>
+
+  <section id="college-affordability" class="card">
+    <h2>College Affordability Dashboard</h2>
+    <div class="card-text">
+      <ul>
+        <li>Built an interactive Power BI report comparing minimum-wage income against the full cost of college across U.S. states over time.</li>
+        <li>Combines state minimum-wage, tuition, and cost-of-living data from 2013 to 2020 to weigh federal and effective-minimum-wage earnings against total attendance cost.</li>
+        <li>Breaks tuition out by sector — public in-state, public out-of-state, and private — and surfaces trends and geography through line and clustered-column charts, KPI cards, slicers, and choropleth and Azure maps across a multi-page report.</li>
+      </ul>
+      <div class="skills">
+          <span>Power BI</span>
+          <span>DAX</span>
+          <span>Data Modeling</span>
+          <span>Data Visualization</span>
+          <span>ETL</span>
+      </div>
+    </div>
+    <img src="portfolio-pictures/PowerBI_SS.jpg" class="project-img" alt="Power BI dashboard comparing minimum wage income against total college cost by state">
+    <div class="card-buttons">
+      <a href="portfolioDownloadables/college-affordability-dashboard.pbix" target="_blank" rel="noopener" class="button">Download Dashboard</a>
+    </div>
+  </section>
+
+</div>
+ 
+
+  </main>
+
+
+    <script>
+    // Hamburger menu toggle
+    function toggleMenu() {
+        document.getElementById("side-menu").classList.toggle("open");
+    }
+
+    const themeCheckbox = document.getElementById('theme-checkbox');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        themeCheckbox.checked = true;
+    } else {
+        body.classList.remove('dark-mode');
+        themeCheckbox.checked = false;
+    }
+
+    themeCheckbox.addEventListener('change', () => {
+        if (themeCheckbox.checked) {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // ===== AUTOMATIC NAVIGATION HIGHLIGHTER =====
+    document.addEventListener("DOMContentLoaded", () => {
+        let currentPage = window.location.pathname.split('/').pop();
+        if (currentPage === "") {
+            currentPage = "index.html";
+        }
+        const navLinks = document.querySelectorAll('.page-links a, .side-menu a');
+        navLinks.forEach(link => {
+            const linkTarget = link.getAttribute('href');
+            if (linkTarget === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    });
+    </script>
+
+
+            <section id="contact" class="contactCard">
+                <h2>Get In Touch</h2>
+                <p>I'm open to internship opportunities in data and business analytics. The best way to reach me is by email or LinkedIn.</p>
+                <div class="motherContact">
+                    <button class="copy-email" onclick="copyEmail(this)" data-email="darius.aminteh@gmail.com">
+                        <svg class="copy-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" 
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span class="copy-label">darius.aminteh@gmail.com</span>
+                    </button>
+                    
+                    <div class = "contactInfo">
+                        <a href="tel:+12406184421" class="button" >(240) 618-4421</a>
+                        <a href="https://www.linkedin.com/in/darius-amin-tehrani/" target="_blank" class="button">LinkedIn</a>
+                    </div> 
+                </div>
+                <button class="scroll-top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" aria-label="Scroll to top">↑</button>
+                <p class="footer-credit">© 2026 Darius Amin-Tehrani. Designed with HTML, CSS, and JavaScript.</p>
+                <script>
+                function copyEmail(btn) {
+                    const email = btn.dataset.email;
+                    navigator.clipboard.writeText(email).then(() => {
+                    const label = btn.querySelector('.copy-label');
+                    const icon = btn.querySelector('.copy-icon');
+                    const originalLabel = label.textContent;
+                    const originalIcon = icon.innerHTML;
+                    label.textContent = 'Copied!';
+                    icon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        label.textContent = originalLabel;
+                        icon.innerHTML = originalIcon;
+                        btn.classList.remove('copied');
+                    }, 1500);
+                    });
+                }
+                </script>
+        </section>
+</body>
+</html>
